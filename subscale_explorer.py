@@ -1,4 +1,3 @@
-import time
 import os
 import math
 import subprocess
@@ -94,7 +93,7 @@ class SubscaleExplorer:
 
                 if adjust_epsilon:
                     n_dimensions = len(json.loads(df[0][0]))
-                    epsilon_adjusted = math.sqrt( eps**2 * n_dimensions)
+                    epsilon_adjusted = math.sqrt(eps**2 * n_dimensions)
 
                 # Iterate over all potential subspaces
                 for _, row in df.iterrows():
@@ -122,13 +121,15 @@ class SubscaleExplorer:
             df_ground_truth = pd.read_csv(ground_truth_file, header=None, delimiter="-") \
                 .apply(lambda s: s.apply(lambda x: (set(json.loads(x)))))
 
-            if metric=="f1":
-                return self.f1_recall(df_ground_truth[1], df_found_clusters[1])
+            if metric == "f1":
+                return self.f1_measure(df_ground_truth[1], df_found_clusters[1])
 
             # Clustering with Cartesian product of dimensions and point_indexes as cluster
             # representation. Once for ground_truth, once for found_clusters.
-            clusters_cartesian_product_ground = [list(itertools.product(x,y)) for x,y in zip(df_ground_truth[0], df_ground_truth[1])]
-            clusters_cartesian_product_res = [list(itertools.product(x,y)) for x,y in zip(df_found_clusters[0], df_found_clusters[1])]
+            clusters_cartesian_product_ground = [list(itertools.product(x, y)) for x, y in zip(df_ground_truth[0],
+                                                                                               df_ground_truth[1])]
+            clusters_cartesian_product_res = [list(itertools.product(x, y)) for x, y in zip(df_found_clusters[0],
+                                                                                            df_found_clusters[1])]
 
             # Entirety of all micro_objects (cartesian products) of the clustering
             # in the form of a set. Once for ground_truth, once for found_clusters.
@@ -138,23 +139,27 @@ class SubscaleExplorer:
             # U is union between all micro_objects from both ground and res
             U = micro_objects_ground.union(micro_objects_res)
 
-            if metric=="rnia":
+            if metric == "rnia":
                 # I is intersection between all micro_objects from both ground and res
                 I = micro_objects_ground.intersection(micro_objects_res)
                 return self.rnia(len(U), len(I))
 
-            if metric=="ce":
+            if metric == "ce":
                 return self.cluster_error(len(U), clusters_cartesian_product_ground, clusters_cartesian_product_res)
 
     @staticmethod
-    def f1_recall(ground, res):
+    def f1_measure(ground, res):
+        """
+        The basic idea of f1_measure is to find a 1:1 mapping between the ground_truth and found clusters,
+        so that the mapped clusters achieve the best possible f1-scores.
+        That is, a found cluster should on the one hand have many objects in common with one of the
+        hidden clusters, but on the other hand it should contain as few objects as possible
+        that are not in this particular hidden cluster (see inner function f1_score).
+        The final score results from the mean value of the mapped f1 scores.
         """
 
-        :param ground:
-        :param res:
-        :return:
-        """
         def f1(c_res, c_ground):
+            """Harmonic mean of precision and recall between the 2 input clusters"""
             try:
                 recall = len(c_res.intersection(c_ground)) / len(c_ground)
                 precision = len(c_ground.intersection(c_res)) / len(c_res)
@@ -180,7 +185,8 @@ class SubscaleExplorer:
         Formula: 1 - (size_union - size_intersection)/size_union
 
         :param size_union: Cardinality of the union between all micro_objects from both ground_truth and found_clusters.
-        :param size_intersection: Cardinality of the intersection between all micro_objects from both ground_truth and found_clusters.
+        :param size_intersection: Cardinality of the intersection between all micro_objects from both ground_truth
+        and found_clusters.
         """
         return 1 - (size_union - size_intersection)/size_union
 
@@ -196,8 +202,8 @@ class SubscaleExplorer:
 
         # M is the confusion matrix between the found_clusters and ground_truth clusters. The values
         # of the individual entries result from the cardinality of the intersection of the respective clusters.
-        M = pd.DataFrame(itertools.product(ground,res)).apply(lambda x: len(set(x[0]).intersection(set(x[1]))), axis=1).to_numpy().reshape(len(ground),len(res))
-
+        M = pd.DataFrame(itertools.product(ground,res)).apply(lambda x: len(set(x[0]).intersection(set(x[1]))), axis=1)\
+            .to_numpy().reshape(len(ground),len(res))
 
         # We use the Hungarian method to find a permutation of the cluster labels such
         # that the sum of the diagonal elements of M is maximized.
