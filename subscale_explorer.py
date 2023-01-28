@@ -17,6 +17,9 @@ import sklearn.cluster
 
 class SubscaleExplorer:
 
+    path_found_clusters = "out/results/found_clusters.csv"
+    path_ground_truth = "res/ground_truth.csv"
+
     def __init__(self):
         self.DB = None
         self.labels = None
@@ -25,12 +28,13 @@ class SubscaleExplorer:
     def generate_database(self, n=10000, d=500, c=10, sub_n=10, sub_d=10, std=0.1):
         self.DB, self.labels = generator.generate_subspacedata(n, d, False, [[sub_n, sub_d, 1, std] for i in range(c)])
 
+        os.makedirs("res", exist_ok=True)
         # generates sample6.csv file for the subscale application
         np.savetxt("res/sample6.csv", self.DB, delimiter=",", fmt='%1.8f')
 
         # generates the corresponding ground_truth.csv file, wich is needed for the scoring.
         # Format of ground_truth.csv is the same as the subscale/dbscan results ([d1,d2,..,dn]-[p1,p2,..,pn])
-        with open("res/ground_truth.csv", mode="w") as output_file:
+        with open(self.path_ground_truth, mode="w") as output_file:
             cluster_counter = 1
             while np.argwhere(self.labels == cluster_counter).size > 0:
                 dimensions = list(set(np.argwhere(self.labels == cluster_counter)[:, 1]))
@@ -72,7 +76,9 @@ class SubscaleExplorer:
             if verbose:
                 print(str(line, "utf-8").replace('\r\n', ''))  # prints logging of SubscaleExtended
 
-    def dbscan(self, eps, adjust_epsilon=False):
+
+
+    def dbscan(self, eps, min_samples, adjust_epsilon=False):
         """
         Potential subspaces will be searched for clusters using the dbscan algorithm.
         The input subspaces are in a csv format. The clusters found are also written to a csv file.
@@ -81,14 +87,14 @@ class SubscaleExplorer:
         if not self.data_initialized:
             raise Exception("Call generate_database() first.")
 
-        with open("out/results/found_clusters.csv", mode="w") as output_file, \
+        with open(self.path_found_clusters, mode="w") as output_file, \
                 os.scandir("out/results/subspaces") as it:
 
             # Iterate over the csv files.
             for entry in it:
                 if os.path.getsize( entry.path) == 0:
                     # Check for empty file sometimes generated due to bug in SubScaleExtended.jar
-                    break
+                    continue
                 df = pd.read_csv(entry.path, header=None, delimiter="-")
 
                 if adjust_epsilon:
@@ -100,7 +106,8 @@ class SubscaleExplorer:
                     points_indexes = json.loads(row[1])
                     dimensions = json.loads(row[0])
                     S = self.DB[points_indexes][:, dimensions]
-                    clustering = sklearn.cluster.DBSCAN(eps=epsilon_adjusted if adjust_epsilon else eps).fit(S)
+                    clustering = sklearn.cluster.DBSCAN(eps=epsilon_adjusted if adjust_epsilon else eps,
+                                                        min_samples=min_samples).fit(S)
 
                     # Converting dbscan result in clusters.csv file-format
                     unique_labels = set(clustering.labels_)
@@ -110,8 +117,14 @@ class SubscaleExplorer:
                         output_file.write(str(dimensions) + "-" + str(U.tolist()) + "\n")
 
     def score(self, metric="f1"):
-        with open("out/results/found_clusters.csv", mode="r") as found_clusters_file, \
-                open("res/ground_truth.csv", mode="r") as ground_truth_file:
+
+        if os.stat(self.path_found_clusters).st_size == 0:
+            # no clusters found
+            return 0
+
+        with open(self.path_found_clusters, mode="r") as found_clusters_file, \
+                open(self.path_ground_truth, mode="r") as ground_truth_file:
+
 
             # A dataframe read from the csv format is converted in such a way
             # that the dimensions and point_indexes are available as a set in the corresponding columns.
@@ -203,7 +216,7 @@ class SubscaleExplorer:
         # M is the confusion matrix between the found_clusters and ground_truth clusters. The values
         # of the individual entries result from the cardinality of the intersection of the respective clusters.
         M = pd.DataFrame(itertools.product(ground,res)).apply(lambda x: len(set(x[0]).intersection(set(x[1]))), axis=1)\
-            .to_numpy().reshape(len(ground),len(res))
+            .to_numpy().reshape(len(ground), len(res))
 
         # We use the Hungarian method to find a permutation of the cluster labels such
         # that the sum of the diagonal elements of M is maximized.
