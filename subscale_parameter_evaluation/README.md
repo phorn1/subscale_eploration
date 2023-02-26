@@ -21,5 +21,5 @@ sub.score("ce")
 ```
 
 ## subscale_analysis.ipynb
-This Jupyter Notebook contains different test runs and evaluations of different datasets and parameter configurations based on **subscale_explorer.px**. 
+This Jupyter Notebook contains different test runs and evaluations of different datasets and parameter configurations based on **subscale_explorer.py**. 
 It is used to visualize the results of the parameter evaluations.
