@@ -22,6 +22,9 @@ import numpy as np
 import math
 import random
 from sklearn.datasets import make_blobs
+from sklearn.datasets import make_circles
+from sklearn.datasets import make_moons
+import matplotlib.pyplot as plt
 
 # PARAMS --------------------------------------------------------------------------------------------------------------
 #subspace_cluster
@@ -39,17 +42,19 @@ def print_instructions():
     print(" -               mu_clu (bool): Can one point be included in multiple subspaces? [Default:False]")
     print("[Optional] subspaces (ndarray): A list of subspaces you want to have in your dataset, written "
           "in the following way:")
-    print("                                [[sub_n, sub_d, c, std], ... ] with")
+    print("                                [[sub_n, sub_d, c, std, circle], ... ] with")
     print("                                  - sub_n   (int): number of points in this subspace")
     print("                                  - sub_d   (int): number of dimensions in this subspace")
     print("                                  -     c   (int): number of clusters in this subspace")
     print("                                  -   std (float): the standard derivation of the cluster(s)")
+    print("                                  -   circle (int): 1 if the data has to be a circle (only 2 dimensions)")
     print(" Example:")
-    print(" A, lables = generate_subspacedata(10, 10, True, [[2, 4, 1, 1.0], [3, 2, 2, 1.0], [6, 3, 1, 0.4], "
-          "[4, 9, 1, 0.6]])")
+    print(" A, lables = generate_subspacedata(10, 10, True, [[2, 4, 1, 1.0, 0], [3, 2, 2, 1.0, 0], [6, 3, 1, 0.4, 0], "
+          "[4, 9, 1, 0.6, 0]])")
 
 
 def generate_subspacedata(n=0, d=0, mu_clu=False, subspaces=None):
+    shape = 0
     if n == 0 or d == 0:
         print_instructions()
         return None, None
@@ -71,37 +76,63 @@ def generate_subspacedata(n=0, d=0, mu_clu=False, subspaces=None):
             sub_d = sub[1]
             c = sub[2]
             std = sub[3]
-            x, y = make_subspaceblob(sub_n, sub_d, c, std)
-            if sub_d <= d:
-                if sub_n <= (n - n_pointer):
-                    for i in range(0, len(x)):
-                        for j in range(0, len(x[0])):
-                            subspace_cluster[i+n_pointer][j] = x[i][j]
-                            subspace_lables[i+n_pointer][j] = number_sub_clusters
-                        empty_space.append(sub_d)
-                    n_pointer = n_pointer + sub_n
-                else:
-                    # place behind other clusters if enabled
-                    if mu_clu:
-                        while len(empty_space) < d:
-                            empty_space.append(0)
-                        #print(empty_space)
-                        for l in empty_space:
-                            if d - l >= sub_d:
-                                empty_rows = empty_rows + 1
-                                needed_dim = max(l, needed_dim)
-                                if empty_rows >= sub_n:
-                                    for i in range(0, len(x)):
-                                        for j in range(0, len(x[0])):
-                                            subspace_cluster[i][j + needed_dim] = x[i][j]
-                                            subspace_lables[i][j + needed_dim] = number_sub_clusters
-                        #print(needed_dim)
-                    else:
-                        print("There are more points in the subspaces than in your dataset!\n"
-                              "Either change those numbers or enable points to be in multiple subspaces by adding "
-                              "the parameter 'True'.")
+            shape = sub[4]
+
+            if shape == 1:
+                sub_d = 2
+
+                x, y = make_subspacecircle(sub_n, std, 0.5)
+
+            if shape == 2:
+                sub_d = 2
+
+                x, y = make_subspacemoon(sub_n, std)
+
+
+            if shape == 3:
+                sub_d = 2
+
+                x, y = make_subspaceaniso(sub_n, c, std, )
+
+
             else:
-                print("The subspace cluster has more dimensions than your original dataspace.")
+                x, y = make_subspaceblob(sub_n, sub_d, c, std)
+
+
+
+
+                if sub_d <= d:
+                    if sub_n <= (n - n_pointer):
+                        for i in range(0, len(x)):
+                            for j in range(0, len(x[0])):
+                                subspace_cluster[i+n_pointer][j] = x[i][j]
+                                subspace_lables[i+n_pointer][j] = number_sub_clusters
+                            empty_space.append(sub_d)
+                        n_pointer = n_pointer + sub_n
+                    else:
+                        # place behind other clusters if enabled
+                        if mu_clu:
+                            while len(empty_space) < d:
+                                empty_space.append(0)
+                            #print(empty_space)
+                            for l in empty_space:
+                                if d - l >= sub_d:
+                                    empty_rows = empty_rows + 1
+                                    needed_dim = max(l, needed_dim)
+                                    if empty_rows >= sub_n:
+                                        for i in range(0, len(x)):
+                                            for j in range(0, len(x[0])):
+                                                subspace_cluster[i][j + needed_dim] = x[i][j]
+                                                subspace_lables[i][j + needed_dim] = number_sub_clusters
+                            #print(needed_dim)
+                        else:
+                            print("There are more points in the subspaces than in your dataset!\n"
+                                "Either change those numbers or enable points to be in multiple subspaces by adding "
+                                "the parameter 'True'.")
+                else:
+                    print("The subspace cluster has more dimensions than your original dataspace.")
+
+
 
         for i in range(0, len(subspace_cluster)):
             for j in range(0, len(subspace_cluster[0])):
@@ -114,6 +145,31 @@ def make_subspaceblob(sub_n, sub_d, c, std):
     box = 100
     #print("Making "+str(c)+" subspace cluster(s) with "+str(sub_d)+" dimensions over "+str(sub_n)+" points (std: "+str(std)+").")
     X, y = make_blobs(n_samples=sub_n, n_features=sub_d, centers=c, cluster_std=std, center_box=(-box, box), shuffle=True, random_state=None)
+    return X, y
+
+
+
+def make_subspacecircle(sub_n, std, factor):
+    #print("Making "+str(c)+" subspace cluster(s) with "+str(sub_d)+" dimensions over "+str(sub_n)+" points (std: "+str(std)+").")
+    X, y = make_circles(n_samples=sub_n, noise=std, factor=factor, random_state=0)
+    plt.scatter(X[:,0],X[:,1])
+    return X, y
+
+def make_subspacemoon(sub_n, std):
+    #print("Making "+str(c)+" subspace cluster(s) with "+str(sub_d)+" dimensions over "+str(sub_n)+" points (std: "+str(std)+").")
+    X, y = make_moons(n_samples=sub_n, noise=std, random_state=0)
+    plt.scatter(X[:,0],X[:,1])
+    return X, y
+
+
+def make_subspaceaniso(sub_n, c, std):
+    #print("Making "+str(c)+" subspace cluster(s) with "+str(sub_d)+" dimensions over "+str(sub_n)+" points (std: "+str(std)+").")
+    box = 100
+
+    X, y = make_blobs(n_samples=sub_n, centers=c, random_state=0, cluster_std=std, center_box=(-box, box))
+    transformation = [[0.6, -0.6], [-0.4, 0.8]]
+    X = np.dot(X, transformation)
+    plt.scatter(X[:,0],X[:,1])
     return X, y
 
 
@@ -132,9 +188,9 @@ def random_subspaces(n, d, mu_clu):
 
 
 # TEST ----------------------------------------------------------------------------------------------------------------
-#A, lables = generate_subspacedata(10, 10, False, [[2, 4, 1, 1.0], [3, 6, 2, 1.0], [1, 5, 1, 0.4], [4, 9, 1, 0.6]])
+# A, lables = generate_subspacedata(10, 10, False, [[2, 4, 1, 1.0, 0], [3, 6, 2, 1.0, 0], [1, 5, 1, 0.4, 0], [4, 9, 1, 0.6, 0]])
 #A, lables = generate_subspacedata(30, 30, True)
 #A, lables = generate_subspacedata()
 
-#print(A)
-#print(lables)
+# print(A)
+# print(lables)
