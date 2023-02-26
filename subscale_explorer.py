@@ -16,6 +16,9 @@ import sklearn.cluster
 
 
 class SubscaleExplorer:
+    """
+    This class can be used to conveniently test different subscale and DBSCAN parameters on synthetic data.
+    """
 
     path_found_clusters = "out/results/found_clusters.csv"
     path_ground_truth = "res/ground_truth.csv"
@@ -25,8 +28,26 @@ class SubscaleExplorer:
         self.labels = None
         self.data_initialized = False
 
-    def generate_database(self, n=10000, d=500, c=10, sub_n=10, sub_d=10, std=0.1):
-        self.DB, self.labels = generator.generate_subspacedata(n, d, False, [[sub_n, sub_d, 1, std] for i in range(c)])
+    def generate_database(self, sub_d, n=10000, d=500, c=10, sub_n=10, std=0.1):
+        """
+        Generates synthetic database and persists it in two files:
+        "res/sample6.csv" for the raw data.
+        "res/ground_truth.csv" for the hidden clusters.
+
+        :param sub_d: amount of dimensions in subspace-clusters
+        :param n: amount of points
+        :param d: amount of dimensions
+        :param c: amount of clusters
+        :param sub_n: amount of points in clusters
+        :param std: standard derivation of clusters
+        """
+
+        # If the clusters are to have different dimensionalities, sub_d can be a list.
+        if type(sub_d) == list:
+            subspaces = [[sub_n, sub_d[i], 1, std] for i in range(c)]
+        else:
+            subspaces = [[sub_n, sub_d, 1, std] for i in range(c)]
+        self.DB, self.labels = generator.generate_subspacedata(n, d, False, subspaces)
 
         os.makedirs("res", exist_ok=True)
         # generates sample6.csv file for the subscale application
@@ -44,6 +65,11 @@ class SubscaleExplorer:
         self.data_initialized = True
 
     def subscale(self, epsilon, minpts, verbose=False):
+        """
+        Wrapper function for Java-Application ExtendedSubscale
+
+        :param verbose: Show logging of ExtendedSubscale
+        """
         if not self.data_initialized:
             raise Exception("Call generate_database() first.")
 
@@ -83,6 +109,8 @@ class SubscaleExplorer:
         Potential subspaces will be searched for clusters using the dbscan algorithm.
         The input subspaces are in a csv format. The clusters found are also written to a csv file.
         The algorithm is density-based and is able to recognize multiple clusters. Noise points are ignored.
+
+        :param adjust_epsilon: Adjust eps on dimensionality
         """
         if not self.data_initialized:
             raise Exception("Call generate_database() first.")
@@ -100,6 +128,7 @@ class SubscaleExplorer:
                 if adjust_epsilon:
                     n_dimensions = len(json.loads(df[0][0]))
                     epsilon_adjusted = math.sqrt(eps**2 * n_dimensions)
+                    # print(str(n_dimensions)+ " " + str(epsilon_adjusted) + " "+ str(eps)) TODO löschen
 
                 # Iterate over all potential subspaces
                 for _, row in df.iterrows():
@@ -117,6 +146,13 @@ class SubscaleExplorer:
                         output_file.write(str(dimensions) + "-" + str(U.tolist()) + "\n")
 
     def score(self, metric="f1"):
+        """
+        with this method the clustering can be evaluated.
+        Which metric is to be used is determined with the parameter "metric".
+
+        :param metric: f1 | rnia | ce
+        :return: score: 1 good, 0.5 solala, 0 bad
+        """
 
         if os.stat(self.path_found_clusters).st_size == 0:
             # no clusters found
