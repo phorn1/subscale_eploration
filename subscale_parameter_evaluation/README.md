@@ -12,6 +12,7 @@ It uses **generator.py** to generate data, **SubScaleExtended.jar** for the subs
 Three evaluation methods are implemented: Cluster Error (CE-Score), F1-Score, and RNIA-Score.
 ```python
 # Example usage
+from subscale_explorer import SubscaleExplorer
 sub = SubscaleExplorer()
 sub.generate_database(n=1000, d=200, c=10, sub_n=20, sub_d=10, std=0.1)
 sub.subscale(epsilon=0.3, minpts=5)
@@ -20,5 +21,5 @@ sub.score("ce")
 ```
 
 ## subscale_analysis.ipynb
-This Jupyter Notebook contains different test runs and evaluations of different datasets and parameter configurations. 
+This Jupyter Notebook contains different test runs and evaluations of different datasets and parameter configurations based on **subscale_explorer.px**. 
 It is used to visualize the results of the parameter evaluations.
