@@ -23,3 +23,19 @@ sub.score("ce")
 ## subscale_analysis.ipynb
 This Jupyter Notebook contains different test runs and evaluations of different datasets and parameter configurations based on **subscale_explorer.py**. 
 It is used to visualize the results of the parameter evaluations.
+
+# Installation
+1. Clone the repository and navigate into it:
+```bash
+git clone https://github.com/phorn1/subscale_exploration
+cd subscale_exploration/subscale_parameter_evaluation
+```
+2. Create and activate a new virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate # on Windows, use `venv\Scripts\activate`
+```
+3. Install the required packages:
+```bash
+pip install -r requirements.txt
+```
