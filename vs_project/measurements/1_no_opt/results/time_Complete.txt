@@ -1,0 +1,6 @@
+Read data: 490 ms
+Calculate cluster candidates with SUBSCALE: 10763 ms
+Calculate final clusters with DBSCAN: 58276 ms
+Write clusters: 2639 ms
+
+Full runtime: 72168 ms

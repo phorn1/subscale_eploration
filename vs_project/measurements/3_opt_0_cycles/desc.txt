@@ -1,0 +1,15 @@
+optimization of epsilon per dimension
+
+epsilon is changed by factor 0.8 or 1.2 depending on silhouette score of clusters calculated in subspace
+
+max 10 cycles of optimization
+
+optimization only when more than 1 cluster is found
+
+no optimization
+
+Epsilon auf 0.2 erhöht. Es wird versucht sinnvollere Cluster zu finden.
+
+Splitting Faktor wurde auf 256 erhöht
+
+Fehlschlag wegen Nvidia runtime error. Vermutlich zu viel Speicherverbrauch.

@@ -1,0 +1,9 @@
+//optimization of epsilon per dimension
+
+//epsilon is changed by factor 0.8 or 1.2 depending on silhouette score of clusters calculated in subspace
+
+//max 10 cycles of optimization
+
+//optimization only when more than 1 cluster is found
+
+no optimization version of this try

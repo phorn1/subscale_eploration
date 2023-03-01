@@ -1,0 +1,4 @@
+6. Load slice: 231 ms
+6. Join slice: 0 ms
+
+Full runtime: 231 ms

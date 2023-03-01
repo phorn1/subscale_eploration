@@ -1,0 +1,98 @@
+8. Dense Units: 324 ms
+8. Pruning: 4 ms
+8. Joining: 1 ms
+8. Copying: 2 ms
+8. Writing: 396 ms
+8. Resetting: 0 ms
+9. Dense Units: 285 ms
+9. Pruning: 3 ms
+9. Joining: 1 ms
+9. Copying: 2 ms
+9. Writing: 352 ms
+9. Resetting: 0 ms
+10. Dense Units: 260 ms
+10. Pruning: 4 ms
+10. Joining: 0 ms
+10. Copying: 2 ms
+10. Writing: 279 ms
+10. Resetting: 0 ms
+11. Dense Units: 232 ms
+11. Pruning: 3 ms
+11. Joining: 1 ms
+11. Copying: 1 ms
+11. Writing: 188 ms
+11. Resetting: 0 ms
+12. Dense Units: 202 ms
+12. Pruning: 2 ms
+12. Joining: 0 ms
+12. Copying: 1 ms
+12. Writing: 108 ms
+12. Resetting: 0 ms
+13. Dense Units: 177 ms
+13. Pruning: 1 ms
+13. Joining: 1 ms
+13. Copying: 0 ms
+13. Writing: 51 ms
+13. Resetting: 0 ms
+14. Dense Units: 152 ms
+14. Pruning: 1 ms
+14. Joining: 0 ms
+14. Copying: 0 ms
+14. Writing: 15 ms
+14. Resetting: 0 ms
+15. Dense Units: 141 ms
+15. Pruning: 1 ms
+15. Joining: 0 ms
+15. Copying: 1 ms
+15. Writing: 2 ms
+15. Resetting: 0 ms
+0. Dense Units: 141 ms
+0. Pruning: 1 ms
+0. Joining: 0 ms
+0. Copying: 1 ms
+0. Writing: 1 ms
+0. Resetting: 0 ms
+1. Dense Units: 148 ms
+1. Pruning: 1 ms
+1. Joining: 0 ms
+1. Copying: 1 ms
+1. Writing: 9 ms
+1. Resetting: 0 ms
+2. Dense Units: 171 ms
+2. Pruning: 2 ms
+2. Joining: 0 ms
+2. Copying: 0 ms
+2. Writing: 38 ms
+2. Resetting: 0 ms
+3. Dense Units: 194 ms
+3. Pruning: 2 ms
+3. Joining: 1 ms
+3. Copying: 0 ms
+3. Writing: 88 ms
+3. Resetting: 0 ms
+4. Dense Units: 228 ms
+4. Pruning: 3 ms
+4. Joining: 0 ms
+4. Copying: 1 ms
+4. Writing: 164 ms
+4. Resetting: 0 ms
+5. Dense Units: 254 ms
+5. Pruning: 3 ms
+5. Joining: 1 ms
+5. Copying: 1 ms
+5. Writing: 244 ms
+5. Resetting: 1 ms
+6. Dense Units: 280 ms
+6. Pruning: 4 ms
+6. Joining: 1 ms
+6. Copying: 1 ms
+6. Writing: 325 ms
+6. Resetting: 0 ms
+7. Dense Units: 293 ms
+7. Pruning: 4 ms
+7. Joining: 2 ms
+7. Copying: 1 ms
+7. Writing: 380 ms
+7. Resetting: 0 ms
+
+Full runtime: 6186 ms

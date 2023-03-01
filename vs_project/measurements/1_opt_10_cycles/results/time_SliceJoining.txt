@@ -1,0 +1,34 @@
+0. Load slice: 15 ms
+0. Join slice: 0 ms
+1. Load slice: 18 ms
+1. Join slice: 0 ms
+2. Load slice: 23 ms
+2. Join slice: 0 ms
+3. Load slice: 30 ms
+3. Join slice: 1 ms
+4. Load slice: 34 ms
+4. Join slice: 0 ms
+5. Load slice: 48 ms
+5. Join slice: 1 ms
+6. Load slice: 57 ms
+6. Join slice: 2 ms
+7. Load slice: 66 ms
+7. Join slice: 1 ms
+8. Load slice: 68 ms
+8. Join slice: 1 ms
+9. Load slice: 62 ms
+9. Join slice: 1 ms
+10. Load slice: 55 ms
+10. Join slice: 1 ms
+11. Load slice: 43 ms
+11. Join slice: 1 ms
+12. Load slice: 30 ms
+12. Join slice: 0 ms
+13. Load slice: 24 ms
+13. Join slice: 1 ms
+14. Load slice: 17 ms
+14. Join slice: 0 ms
+15. Load slice: 19 ms
+15. Join slice: 0 ms
+
+Full runtime: 619 ms

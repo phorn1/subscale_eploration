@@ -1,0 +1,5 @@
+Initialisation: 323 ms
+Calculation of Slices: 169 ms
+Combination of slices: 614 ms
+
+Full runtime: 1106 ms

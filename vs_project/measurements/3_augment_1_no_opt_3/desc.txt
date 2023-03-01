@@ -1,0 +1,17 @@
+optimization of epsilon per dimension
+
+epsilon is changed by factor 0.8 or 1.2 depending on silhouette score of clusters calculated in subspace
+
+max 10 cycles of optimization
+
+optimization only when more than 1 cluster is found
+
+augmented data is used
+
+sub.generate_database(n=1000, d=200, c=10, sub_n=20, sub_d=10, std=0.01)
+
+no optimization
+
+config.json wurde angepasst. Beim ersten Versuch wurden zu viele Cluster in zu niedrigen Dimensionen gefunden.
+
+Besser, als der vorherige Versuch, aber noch nicht gut.

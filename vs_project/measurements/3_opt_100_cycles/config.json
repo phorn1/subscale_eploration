@@ -1,0 +1,16 @@
+{
+    "minPoints": 4,
+    "epsilon": 0.2,
+    "splittingFactor": 256,
+    "dataPath": "data/sample5.csv",
+    "resultPath": "results/",
+    "saveCandidates": false,
+    "useDBSCAN": true,
+    "saveClusters": true,
+    "runSequential": false,
+    "denseUnitTableSize": 8000000,
+    "subspaceTableSize": 5000000,
+    "finalTableSize": 3000000,
+    "threadsPerBlock": 64,
+    "denseUnitsPerThread": 3
+}
