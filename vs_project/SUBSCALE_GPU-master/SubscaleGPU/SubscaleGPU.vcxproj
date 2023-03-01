@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="BinomialCoeffCreator\BinomialCoeffCreator.cu" />
+    <CudaCompile Include="BinomialCoeffCreator\BinomialCoeffCreatorMemoryManager.cu" />
+    <CudaCompile Include="DenseUnitCreator\DenseUnitCreator.cu" />
+    <CudaCompile Include="DenseUnitCreator\DenseUnitKernels.cu" />
+    <CudaCompile Include="DenseUnitMap\DenseUnitMap.cu" />
+    <CudaCompile Include="DenseUnitMap\DenseUnitMapMemoryManager.cu" />
+    <CudaCompile Include="HelperFunctions\cudaHelperFunctions.cu" />
+    <CudaCompile Include="MemoryManager\DeviceMemory.cu" />
+    <CudaCompile Include="MemoryManager\HostMemory.cu" />
+    <CudaCompile Include="MemoryManager\LocalMemory.cu" />
+    <CudaCompile Include="MemoryManager\MemoryManager.cu" />
+    <CudaCompile Include="MemoryManager\UnifiedMemory.cu" />
+    <CudaCompile Include="StadiumHashing\ConcStadiumHash.cu" />
+    <CudaCompile Include="StadiumHashing\StadiumHash.cu" />
+    <CudaCompile Include="SubspaceJoiner\SubspaceJoiner.cu" />
+    <CudaCompile Include="SubspaceMap\SubspaceMap.cu" />
+    <CudaCompile Include="SubspaceMap\SubspaceMapMemoryManager.cu" />
+    <CudaCompile Include="Tables\BitMapper.cu" />
+    <CudaCompile Include="Tables\DenseUnitTable.cu" />
+    <CudaCompile Include="Tables\DenseUnitTableMemoryManager.cu" />
+    <CudaCompile Include="Tables\SubscaleTable.cu" />
+    <CudaCompile Include="Tables\SubspaceTable.cu" />
+    <CudaCompile Include="Tables\SubspaceTableMemoryManager.cu" />
+    <CudaCompile Include="Tables\TableConversionKernels.cu" />
+    <CudaCompile Include="Tables\TableManager.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinomialCoeffCreator\BinomialCoeffCreator.cuh" />
+    <ClInclude Include="BinomialCoeffCreator\BinomialCoeffCreatorMemoryManager.cuh" />
+    <ClInclude Include="BinomialCoeffCreator\DeviceBinomialCoeffCreator.cuh" />
+    <ClInclude Include="BinomialCoeffCreator\HostBinomialCoeffCreator.cuh" />
+    <ClInclude Include="BinomialCoeffCreator\LocalBinomialCoeffCreator.cuh" />
+    <ClInclude Include="BinomialCoeffCreator\UnifiedBinomialCoeffCreator.cuh" />
+    <ClInclude Include="Clustering\Clustering.h" />
+    <ClInclude Include="Clustering\MultithreadedClustering.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="CoreSetCreator\CoreSetCreator.h" />
+    <ClInclude Include="CsvDataHandler\CsvDataHandler.h" />
+    <ClInclude Include="DenseUnitCreator\DenseUnitCreator.cuh" />
+    <ClInclude Include="DenseUnitCreator\DenseUnitKernels.cuh" />
+    <ClInclude Include="DenseUnitCreator\DenseUnitCreatorSeq.h" />
+    <ClInclude Include="DenseUnitCreator\IDenseUnitCreator.h" />
+    <ClInclude Include="DenseUnitMap\DenseUnitMapSeq.h" />
+    <ClInclude Include="DenseUnitMap\DenseUnitMap.cuh" />
+    <ClInclude Include="DenseUnitMap\DenseUnitMapMemoryManager.cuh" />
+    <ClInclude Include="DenseUnitMap\DeviceDenseUnitMap.cuh" />
+    <ClInclude Include="DenseUnitMap\HostDenseUnitMap.cuh" />
+    <ClInclude Include="DenseUnitMap\LocalDenseUnitMap.cuh" />
+    <ClInclude Include="DenseUnitMap\UnifiedDenseUnitMap.cuh" />
+    <ClInclude Include="DoubleHashing\DoubleHash.h" />
+    <ClInclude Include="HelperFunctions\cudaHelperFunctions.cuh" />
+    <ClInclude Include="HelperFunctions\roundingFunctions.h" />
+    <ClInclude Include="LabelGenerator\LabelGenerator.h" />
+    <ClInclude Include="MemoryManager\DeviceMemory.cuh" />
+    <ClInclude Include="MemoryManager\HostMemory.cuh" />
+    <ClInclude Include="MemoryManager\LocalMemory.cuh" />
+    <ClInclude Include="MemoryManager\MemoryManager.cuh" />
+    <ClInclude Include="MemoryManager\UnifiedMemory.cuh" />
+    <ClInclude Include="StadiumHashing\ConcStadiumHash.cuh" />
+    <ClInclude Include="StadiumHashing\StadiumHash.cuh" />
+    <ClInclude Include="SubscaleConfig\SubscaleConfig.h" />
+    <ClInclude Include="SubscaleTypes.h" />
+    <ClInclude Include="Subscale\ISubscale.h" />
+    <ClInclude Include="Subscale\Subscale.h" />
+    <ClInclude Include="Subscale\SubscaleSeq.h" />
+    <ClInclude Include="SubspaceJoiner\ISubspaceJoiner.h" />
+    <ClInclude Include="SubspaceJoiner\SubspaceJoiner.cuh" />
+    <ClInclude Include="SubspaceJoiner\SubspaceJoinerSeq.h" />
+    <ClInclude Include="SubspaceMap\DeviceSubspaceMap.cuh" />
+    <ClInclude Include="SubspaceMap\HostSubspaceMap.cuh" />
+    <ClInclude Include="SubspaceMap\SubspaceMap.cuh" />
+    <ClInclude Include="SubspaceMap\SubspaceMapMemoryManager.cuh" />
+    <ClInclude Include="SubspaceMap\SubspaceMapSeq.h" />
+    <ClInclude Include="SubspaceMap\LocalSubspaceMap.cuh" />
+    <ClInclude Include="SubspaceMap\UnifiedSubspaceMap.cuh" />
+    <ClInclude Include="Tables\BitMapper.cuh" />
+    <ClInclude Include="Tables\DenseUnitTable.cuh" />
+    <ClInclude Include="Tables\DenseUnitTableMemoryManager.cuh" />
+    <ClInclude Include="Tables\DeviceDenseUnitTable.cuh" />
+    <ClInclude Include="Tables\DeviceSubspaceTable.cuh" />
+    <ClInclude Include="Tables\HostDenseUnitTable.cuh" />
+    <ClInclude Include="Tables\HostSubspaceTable.cuh" />
+    <ClInclude Include="Tables\ITableManager.h" />
+    <ClInclude Include="Tables\LocalDenseUnitTable.cuh" />
+    <ClInclude Include="Tables\LocalSubspaceTable.cuh" />
+    <ClInclude Include="Tables\SubscaleTable.cuh" />
+    <ClInclude Include="Tables\SubspaceTable.cuh" />
+    <ClInclude Include="Tables\SubspaceTableMemoryManager.cuh" />
+    <ClInclude Include="Tables\TableConversionKernels.cuh" />
+    <ClInclude Include="Tables\TableManager.cuh" />
+    <ClInclude Include="Tables\TableManagerSeq.h" />
+    <ClInclude Include="Tables\UnifiedDenseUnitTable.cuh" />
+    <ClInclude Include="Tables\UnifiedSubspaceTable.cuh" />
+    <ClInclude Include="TimeMeasurement\TimeMeasurement.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bindings.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Clustering\Clustering.cpp" />
+    <ClCompile Include="Clustering\MultithreadedClustering.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="CoreSetCreator\CoreSetCreator.cpp" />
+    <ClCompile Include="CsvDataHandler\CsvDataHandler.cpp" />
+    <ClCompile Include="DenseUnitCreator\DenseUnitCreatorSeq.cpp" />
+    <ClCompile Include="DenseUnitMap\DenseUnitMapSeq.cpp" />
+    <ClCompile Include="DoubleHashing\DoubleHash.cpp" />
+    <ClCompile Include="HelperFunctions\roundingFunctions.cpp" />
+    <ClCompile Include="LabelGenerator\LabelGenerator.cpp" />
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SilhouetteScoring.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SubscaleConfig\SubscaleConfig.cpp" />
+    <ClCompile Include="Subscale\ISubscale.cpp" />
+    <ClCompile Include="Subscale\Subscale.cpp" />
+    <ClCompile Include="Subscale\SubscaleSeq.cpp" />
+    <ClCompile Include="SubspaceJoiner\SubspaceJoinerSeq.cpp" />
+    <ClCompile Include="SubspaceMap\SubspaceMapSeq.cpp" />
+    <ClCompile Include="Tables\TableManagerSeq.cpp" />
+    <ClCompile Include="TimeMeasurement\TimeMeasurement.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7B30629F-9667-4CEE-AB1C-3A994DC886DE}</ProjectGuid>
+    <RootNamespace>SubscaleGPU</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\INFM Projekt\vcpkg\vcpkg\installed\x86-windows\include;E:\INFM Projekt\vcpkg\vcpkg\installed\x64-windows\include;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>G:\INFM Projekt\vcpkg\vcpkg\installed\x86-windows\lib;G:\INFM Projekt\vcpkg\vcpkg\installed\x64-windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+    </CudaCompile>
+    <CudaLink>
+      <UseHostLibraryDirectories>false</UseHostLibraryDirectories>
+    </CudaLink>
+    <CudaLink>
+      <UseHostLibraryDependencies>false</UseHostLibraryDependencies>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.0.targets" />
+    <Import Project="..\packages\boost.1.60.0.0\build\native\boost.targets" Condition="Exists('..\packages\boost.1.60.0.0\build\native\boost.targets')" />
+    <Import Project="..\packages\boost_math_c99-vc140.1.60.0.0\build\native\boost_math_c99-vc140.targets" Condition="Exists('..\packages\boost_math_c99-vc140.1.60.0.0\build\native\boost_math_c99-vc140.targets')" />
+    <Import Project="..\packages\boost_program_options-vc140.1.60.0.0\build\native\boost_program_options-vc140.targets" Condition="Exists('..\packages\boost_program_options-vc140.1.60.0.0\build\native\boost_program_options-vc140.targets')" />
+    <Import Project="..\packages\boost_random-vc140.1.60.0.0\build\native\boost_random-vc140.targets" Condition="Exists('..\packages\boost_random-vc140.1.60.0.0\build\native\boost_random-vc140.targets')" />
+    <Import Project="..\packages\boost_serialization-vc140.1.60.0.0\build\native\boost_serialization-vc140.targets" Condition="Exists('..\packages\boost_serialization-vc140.1.60.0.0\build\native\boost_serialization-vc140.targets')" />
+    <Import Project="..\packages\boost_unit_test_framework-vc140.1.60.0.0\build\native\boost_unit_test_framework-vc140.targets" Condition="Exists('..\packages\boost_unit_test_framework-vc140.1.60.0.0\build\native\boost_unit_test_framework-vc140.targets')" />
+    <Import Project="..\packages\OpenBLAS.0.2.14.1\build\native\openblas.targets" Condition="Exists('..\packages\OpenBLAS.0.2.14.1\build\native\openblas.targets')" />
+    <Import Project="..\packages\armadillo-code.7.800.2\build\native\armadillo-code.targets" Condition="Exists('..\packages\armadillo-code.7.800.2\build\native\armadillo-code.targets')" />
+    <Import Project="..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" />
+    <Import Project="..\packages\mlpack-windows.2.2.0.5\build\native\mlpack-windows.targets" Condition="Exists('..\packages\mlpack-windows.2.2.0.5\build\native\mlpack-windows.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Dieses Projekt verweist auf mindestens ein NuGet-Paket, das auf diesem Computer fehlt. Verwenden Sie die Wiederherstellung von NuGet-Paketen, um die fehlenden Dateien herunterzuladen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=322105". Die fehlende Datei ist "{0}".</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\boost.1.60.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost.1.60.0.0\build\native\boost.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_math_c99-vc140.1.60.0.0\build\native\boost_math_c99-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_math_c99-vc140.1.60.0.0\build\native\boost_math_c99-vc140.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_program_options-vc140.1.60.0.0\build\native\boost_program_options-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_program_options-vc140.1.60.0.0\build\native\boost_program_options-vc140.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_random-vc140.1.60.0.0\build\native\boost_random-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_random-vc140.1.60.0.0\build\native\boost_random-vc140.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_serialization-vc140.1.60.0.0\build\native\boost_serialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_serialization-vc140.1.60.0.0\build\native\boost_serialization-vc140.targets'))" />
+    <Error Condition="!Exists('..\packages\boost_unit_test_framework-vc140.1.60.0.0\build\native\boost_unit_test_framework-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost_unit_test_framework-vc140.1.60.0.0\build\native\boost_unit_test_framework-vc140.targets'))" />
+    <Error Condition="!Exists('..\packages\OpenBLAS.0.2.14.1\build\native\openblas.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenBLAS.0.2.14.1\build\native\openblas.targets'))" />
+    <Error Condition="!Exists('..\packages\armadillo-code.7.800.2\build\native\armadillo-code.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\armadillo-code.7.800.2\build\native\armadillo-code.targets'))" />
+    <Error Condition="!Exists('..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets'))" />
+    <Error Condition="!Exists('..\packages\mlpack-windows.2.2.0.5\build\native\mlpack-windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\mlpack-windows.2.2.0.5\build\native\mlpack-windows.targets'))" />
+  </Target>
+</Project>

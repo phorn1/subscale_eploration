@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="BinomialCoeffCreator">
+      <UniqueIdentifier>{c5bb845d-e629-4e6d-ab04-91f44ed9081f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BinomialCoeffCreator\Memory">
+      <UniqueIdentifier>{0027a26e-ad9a-4379-9d4d-ec0e3e3cc7fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Clustering">
+      <UniqueIdentifier>{53388b70-285a-4b16-9510-66183fcb7898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CoreSetCreator">
+      <UniqueIdentifier>{613593e3-a247-4c50-b937-3ded464cb376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CsvDataHandler">
+      <UniqueIdentifier>{0239bafc-66e5-4798-90a5-ff288c0f5009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitCreator">
+      <UniqueIdentifier>{5f68d347-c420-40ff-8511-4e9a1d4c371f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitCreator\Parallel">
+      <UniqueIdentifier>{976a81e7-870a-493c-90b8-c200e7fe9f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitCreator\Sequential">
+      <UniqueIdentifier>{41149233-1b16-46b8-9d08-c16486fffacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitMap">
+      <UniqueIdentifier>{6b5250bd-b354-4581-bde9-c1d65b330854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitMap\Parallel">
+      <UniqueIdentifier>{6d27dfc0-21a0-45d8-86ce-9c4e277c8dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitMap\Sequential">
+      <UniqueIdentifier>{b964a647-d76f-469d-8117-68e87f040fdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DenseUnitMap\Parallel\Memory">
+      <UniqueIdentifier>{b0abb0eb-727f-4145-909b-4f9f1cbd7f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DoubleHashing">
+      <UniqueIdentifier>{97bfdf08-e1f7-4452-b6c9-6aea54305f94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperFunctions">
+      <UniqueIdentifier>{fab15054-4a8c-4f2a-bc44-4ca08eb9eb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LabelGenerator">
+      <UniqueIdentifier>{de0d8cb5-b153-4e17-8516-f669847a4672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryManager">
+      <UniqueIdentifier>{fd26bff2-c9d9-4bb4-a24d-c57d8f541b95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryManager\Device">
+      <UniqueIdentifier>{07bd9f34-dc0e-49c7-b109-4c12f2e5e289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryManager\Host">
+      <UniqueIdentifier>{1114618a-465d-4a1a-aec0-fab9d219dbe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryManager\Local">
+      <UniqueIdentifier>{fcad29e0-ddb8-464e-a047-e16cf9b0c1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryManager\Unified">
+      <UniqueIdentifier>{d34653ec-243a-4be1-8562-e72659246a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StadiumHash">
+      <UniqueIdentifier>{beca4df5-b29a-41b3-a4c7-fed70c8cf8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Subscale">
+      <UniqueIdentifier>{a6c9da6c-0a4f-4214-9ffb-abf2bacbe462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubscaleConfig">
+      <UniqueIdentifier>{052defbc-f25f-4c14-bfcc-08ddaad82522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceJoiner">
+      <UniqueIdentifier>{30256f04-927f-4963-8947-10ae5dc46b3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceJoiner\Parallel">
+      <UniqueIdentifier>{03908307-b676-430f-99c3-93c41f9bcce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceJoiner\Sequential">
+      <UniqueIdentifier>{97cbcb9d-aec5-4dee-bbb2-9dee9bda9c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceMap">
+      <UniqueIdentifier>{31a34ac4-c168-4970-ab21-f7b98ca79484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceMap\Parallel">
+      <UniqueIdentifier>{ae00f64b-295f-4fba-a8a9-0bba93af00c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceMap\Sequential">
+      <UniqueIdentifier>{e829a09f-6d02-473e-a46f-0e3a2535ef09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubspaceMap\Parallel\Memory">
+      <UniqueIdentifier>{5605dc27-22e3-4e96-aca5-d0b4cf1602e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables">
+      <UniqueIdentifier>{ad2c9d10-319d-4d19-934f-3fc9c7746c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\BitMapper">
+      <UniqueIdentifier>{12e861e7-93a4-4a3a-afca-7ce6e8e315b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\SubspaceTable">
+      <UniqueIdentifier>{39170ba7-0f42-4721-8f10-b0f47036e0dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\TableManager">
+      <UniqueIdentifier>{aa835db9-c31b-4f7f-bd5b-b752cb76974a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\SubscaleTable">
+      <UniqueIdentifier>{cf68c78d-f594-4440-a488-3dd8df335720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\DenseUnitTable">
+      <UniqueIdentifier>{755c299c-e8d7-4da3-9595-ea922878c475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\DenseUnitTable\Memory">
+      <UniqueIdentifier>{68091e3e-b5b7-45f9-9fb2-e5d7aee19b7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\SubspaceTable\Memory">
+      <UniqueIdentifier>{1912ba01-1365-4b13-a910-a98f95092601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\TableManager\Parallel">
+      <UniqueIdentifier>{bf6f8c5b-98c1-45d2-ab0c-107e4ce1a47e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tables\TableManager\Sequential">
+      <UniqueIdentifier>{93a6dadf-1ff8-44a7-9222-de52169590e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TimeMeasurement">
+      <UniqueIdentifier>{f365b30b-516d-46bd-9736-f0a11484afa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Subscale\Parallel">
+      <UniqueIdentifier>{a32560d0-4a50-4c4a-9418-fb7f7fdc633e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Subscale\Sequential">
+      <UniqueIdentifier>{48ba8421-2679-4fc1-bd1e-cd146340ef56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Evaluation">
+      <UniqueIdentifier>{af4232dd-a5a0-47fb-af92-496e71c2ef7f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="BinomialCoeffCreator\BinomialCoeffCreator.cu">
+      <Filter>BinomialCoeffCreator</Filter>
+    </CudaCompile>
+    <CudaCompile Include="BinomialCoeffCreator\BinomialCoeffCreatorMemoryManager.cu">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </CudaCompile>
+    <CudaCompile Include="DenseUnitCreator\DenseUnitCreator.cu">
+      <Filter>DenseUnitCreator\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="DenseUnitCreator\DenseUnitKernels.cu">
+      <Filter>DenseUnitCreator\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="DenseUnitMap\DenseUnitMap.cu">
+      <Filter>DenseUnitMap\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="DenseUnitMap\DenseUnitMapMemoryManager.cu">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </CudaCompile>
+    <CudaCompile Include="HelperFunctions\cudaHelperFunctions.cu">
+      <Filter>HelperFunctions</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MemoryManager\MemoryManager.cu">
+      <Filter>MemoryManager</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MemoryManager\DeviceMemory.cu">
+      <Filter>MemoryManager\Device</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MemoryManager\HostMemory.cu">
+      <Filter>MemoryManager\Host</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MemoryManager\LocalMemory.cu">
+      <Filter>MemoryManager\Local</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MemoryManager\UnifiedMemory.cu">
+      <Filter>MemoryManager\Unified</Filter>
+    </CudaCompile>
+    <CudaCompile Include="StadiumHashing\ConcStadiumHash.cu">
+      <Filter>StadiumHash</Filter>
+    </CudaCompile>
+    <CudaCompile Include="StadiumHashing\StadiumHash.cu">
+      <Filter>StadiumHash</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SubspaceJoiner\SubspaceJoiner.cu">
+      <Filter>SubspaceJoiner\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\BitMapper.cu">
+      <Filter>Tables\BitMapper</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\DenseUnitTable.cu">
+      <Filter>Tables\DenseUnitTable</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\DenseUnitTableMemoryManager.cu">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\SubscaleTable.cu">
+      <Filter>Tables\SubscaleTable</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\SubspaceTable.cu">
+      <Filter>Tables\SubspaceTable</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\SubspaceTableMemoryManager.cu">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\TableConversionKernels.cu">
+      <Filter>Tables\TableManager\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Tables\TableManager.cu">
+      <Filter>Tables\TableManager\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SubspaceMap\SubspaceMap.cu">
+      <Filter>SubspaceMap\Parallel</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SubspaceMap\SubspaceMapMemoryManager.cu">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BinomialCoeffCreator\BinomialCoeffCreator.cuh">
+      <Filter>BinomialCoeffCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="BinomialCoeffCreator\BinomialCoeffCreatorMemoryManager.cuh">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="BinomialCoeffCreator\DeviceBinomialCoeffCreator.cuh">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="BinomialCoeffCreator\HostBinomialCoeffCreator.cuh">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="BinomialCoeffCreator\LocalBinomialCoeffCreator.cuh">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="BinomialCoeffCreator\UnifiedBinomialCoeffCreator.cuh">
+      <Filter>BinomialCoeffCreator\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Clustering\Clustering.h">
+      <Filter>Clustering</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreSetCreator\CoreSetCreator.h">
+      <Filter>CoreSetCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvDataHandler\CsvDataHandler.h">
+      <Filter>CsvDataHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitCreator\DenseUnitCreator.cuh">
+      <Filter>DenseUnitCreator\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitCreator\DenseUnitKernels.cuh">
+      <Filter>DenseUnitCreator\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitCreator\IDenseUnitCreator.h">
+      <Filter>DenseUnitCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\DenseUnitMap.cuh">
+      <Filter>DenseUnitMap\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\DenseUnitMapMemoryManager.cuh">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\DeviceDenseUnitMap.cuh">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleHashing\DoubleHash.h">
+      <Filter>DoubleHashing</Filter>
+    </ClInclude>
+    <ClInclude Include="HelperFunctions\cudaHelperFunctions.cuh">
+      <Filter>HelperFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="HelperFunctions\roundingFunctions.h">
+      <Filter>HelperFunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelGenerator\LabelGenerator.h">
+      <Filter>LabelGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager\MemoryManager.cuh">
+      <Filter>MemoryManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager\DeviceMemory.cuh">
+      <Filter>MemoryManager\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager\HostMemory.cuh">
+      <Filter>MemoryManager\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager\LocalMemory.cuh">
+      <Filter>MemoryManager\Local</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryManager\UnifiedMemory.cuh">
+      <Filter>MemoryManager\Unified</Filter>
+    </ClInclude>
+    <ClInclude Include="StadiumHashing\ConcStadiumHash.cuh">
+      <Filter>StadiumHash</Filter>
+    </ClInclude>
+    <ClInclude Include="StadiumHashing\StadiumHash.cuh">
+      <Filter>StadiumHash</Filter>
+    </ClInclude>
+    <ClInclude Include="SubscaleConfig\SubscaleConfig.h">
+      <Filter>SubscaleConfig</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceJoiner\ISubspaceJoiner.h">
+      <Filter>SubspaceJoiner</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceJoiner\SubspaceJoiner.cuh">
+      <Filter>SubspaceJoiner\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceJoiner\SubspaceJoinerSeq.h">
+      <Filter>SubspaceJoiner\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\BitMapper.cuh">
+      <Filter>Tables\BitMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\DenseUnitTable.cuh">
+      <Filter>Tables\DenseUnitTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\DenseUnitTableMemoryManager.cuh">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\DeviceDenseUnitTable.cuh">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\HostDenseUnitTable.cuh">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\DeviceSubspaceTable.cuh">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\HostSubspaceTable.cuh">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\LocalDenseUnitTable.cuh">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\ITableManager.h">
+      <Filter>Tables\TableManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\LocalSubspaceTable.cuh">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\SubscaleTable.cuh">
+      <Filter>Tables\SubscaleTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\SubspaceTable.cuh">
+      <Filter>Tables\SubspaceTable</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\SubspaceTableMemoryManager.cuh">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\UnifiedDenseUnitTable.cuh">
+      <Filter>Tables\DenseUnitTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\UnifiedSubspaceTable.cuh">
+      <Filter>Tables\SubspaceTable\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\TableConversionKernels.cuh">
+      <Filter>Tables\TableManager\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\TableManager.cuh">
+      <Filter>Tables\TableManager\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="Tables\TableManagerSeq.h">
+      <Filter>Tables\TableManager\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeMeasurement\TimeMeasurement.h">
+      <Filter>TimeMeasurement</Filter>
+    </ClInclude>
+    <ClInclude Include="SubscaleTypes.h" />
+    <ClInclude Include="SubspaceMap\SubspaceMap.cuh">
+      <Filter>SubspaceMap\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\DeviceSubspaceMap.cuh">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\SubspaceMapMemoryManager.cuh">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\HostSubspaceMap.cuh">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\SubspaceMapSeq.h">
+      <Filter>SubspaceMap\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\DenseUnitMapSeq.h">
+      <Filter>DenseUnitMap\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\HostDenseUnitMap.cuh">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\LocalDenseUnitMap.cuh">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitMap\UnifiedDenseUnitMap.cuh">
+      <Filter>DenseUnitMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\LocalSubspaceMap.cuh">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SubspaceMap\UnifiedSubspaceMap.cuh">
+      <Filter>SubspaceMap\Parallel\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Subscale\ISubscale.h">
+      <Filter>Subscale</Filter>
+    </ClInclude>
+    <ClInclude Include="DenseUnitCreator\DenseUnitCreatorSeq.h">
+      <Filter>DenseUnitCreator\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="Subscale\Subscale.h">
+      <Filter>Subscale\Parallel</Filter>
+    </ClInclude>
+    <ClInclude Include="Subscale\SubscaleSeq.h">
+      <Filter>Subscale\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="Clustering\MultithreadedClustering.h">
+      <Filter>Clustering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Clustering\Clustering.cpp">
+      <Filter>Clustering</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreSetCreator\CoreSetCreator.cpp">
+      <Filter>CoreSetCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvDataHandler\CsvDataHandler.cpp">
+      <Filter>CsvDataHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleHashing\DoubleHash.cpp">
+      <Filter>DoubleHashing</Filter>
+    </ClCompile>
+    <ClCompile Include="HelperFunctions\roundingFunctions.cpp">
+      <Filter>HelperFunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelGenerator\LabelGenerator.cpp">
+      <Filter>LabelGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="SubscaleConfig\SubscaleConfig.cpp">
+      <Filter>SubscaleConfig</Filter>
+    </ClCompile>
+    <ClCompile Include="SubspaceJoiner\SubspaceJoinerSeq.cpp">
+      <Filter>SubspaceJoiner\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="Tables\TableManagerSeq.cpp">
+      <Filter>Tables\TableManager\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeMeasurement\TimeMeasurement.cpp">
+      <Filter>TimeMeasurement</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SubspaceMap\SubspaceMapSeq.cpp">
+      <Filter>SubspaceMap\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="DenseUnitMap\DenseUnitMapSeq.cpp">
+      <Filter>DenseUnitMap\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="Subscale\ISubscale.cpp">
+      <Filter>Subscale</Filter>
+    </ClCompile>
+    <ClCompile Include="DenseUnitCreator\DenseUnitCreatorSeq.cpp">
+      <Filter>DenseUnitCreator\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="Subscale\Subscale.cpp">
+      <Filter>Subscale\Parallel</Filter>
+    </ClCompile>
+    <ClCompile Include="Subscale\SubscaleSeq.cpp">
+      <Filter>Subscale\Sequential</Filter>
+    </ClCompile>
+    <ClCompile Include="Clustering\MultithreadedClustering.cpp">
+      <Filter>Clustering</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings.cpp" />
+    <ClCompile Include="SilhouetteScoring.cpp">
+      <Filter>Evaluation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
